@@ -1,0 +1,101 @@
+---
+title: "Capstone I"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(ggcorrplot)
+library(readr)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+data <- read_delim("cereal.csv", delim = ";")
+```
+
+```{r}
+numeric_columns <- c('calories', 'protein', 'fat', 'sodium', 'fiber', 'carbo', 'sugars', 'potass', 'vitamins', 'weight', 'cups', 'rating')
+data[numeric_columns] <- lapply(data[numeric_columns], as.numeric)
+
+
+data$type <- as.factor(data$type)
+```
+
+Testing Hypothesis 1: Healthier cereals (low in sugar and high in fiber) will have a higher rating.
+
+```{r}
+ggplot(data, aes(x=fiber, y=rating, color=sugars)) +
+  geom_point() +
+  labs(title="Ratings vs Fiber Content Colored by Sugar Content",
+       x="Fiber Content (g)",
+       y="Rating") +
+  scale_color_gradient(low="blue", high="red")
+
+ggsave("hypothesis_1.png")
+```
+
+Testing Hypothesis 2: Cereals marketed towards children will have higher sugar content and lower ratings.
+
+```{r}
+ggplot(data, aes(x=type, y=sugars)) +
+  geom_boxplot() +
+  labs(title="Sugar Content by Cereal Type",
+       x="Cereal Type",
+       y="Sugar Content (g)")
+
+ggsave("hypothesis_2_sugars.png")
+
+ggplot(data, aes(x=type, y=rating)) +
+  geom_boxplot() +
+  labs(title="Rating by Cereal Type",
+       x="Cereal Type",
+       y="Rating")
+
+ggsave("hypothesis_2_ratings.png")
+```
+
+Testing Hypothesis 3: Cereals with higher protein content will have higher ratings.
+
+```{r}
+ggplot(data, aes(x=protein, y=rating)) +
+  geom_point() +
+  labs(title="Ratings vs Protein Content",
+       x="Protein Content (g)",
+       y="Rating")
+
+ggsave("hypothesis_3.png")
+```
+
+Testing Hypothesis 4: Cereals with high calorie counts will be less popular (lower ratings).
+
+```{r}
+ggplot(data, aes(x=calories, y=rating)) +
+  geom_point() +
+  labs(title="Ratings vs Calorie Content",
+       x="Calories",
+       y="Rating")
+
+ggsave("hypothesis_4.png")
+```
+
+Testing Hypothesis 5: There will be a correlation between the brand/manufacturer and the nutritional content of the cereals.
+
+```{r}
+ggplot(data, aes(x=mfr, y=sugars)) +
+  geom_boxplot() +
+  labs(title="Sugar Content by Manufacturer",
+       x="Manufacturer",
+       y="Sugar Content (g)")
+
+ggsave("hypothesis_5_sugars.png")
+
+ggplot(data, aes(x=mfr, y=fiber)) +
+  geom_boxplot() +
+  labs(title="Fiber Content by Manufacturer",
+       x="Manufacturer",
+       y="Fiber Content (g)")
+
+ggsave("hypothesis_5_fiber.png")
+```
