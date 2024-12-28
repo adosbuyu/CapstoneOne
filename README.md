@@ -20,9 +20,13 @@ This study explores five key hypotheses:
 The dataset includes nutritional and rating information for various cereals. Key columns include:
 
 name, mfr (manufacturer), type
+
 Nutritional attributes: calories, protein, fat, sodium, fiber, carbohydrates, sugars, potassium, vitamins
+
 Additional attributes: shelf (store shelf placement), weight, cups
+
 Target variable: rating
+
 The full dataset can be found here.
 
 **Project Objectives**
@@ -65,18 +69,23 @@ Generated dashboards for easy interpretation of findings.
 **Key Findings**
 
 Hypothesis 1: Healthier cereals (low sugar, high fiber) have higher ratings.
+
 Finding: Low-sugar cereals with high fiber content received significantly higher ratings. However, a balance of moderate fiber and low sugar often resulted in the highest ratings.
 
 Hypothesis 2: Cereals marketed to children have higher sugar content and lower ratings.
+
 Finding: Children’s cereals had a median sugar content of ~8g and lower median ratings (~40), compared to healthier cereals with a median sugar content of ~1g and ratings around 60.
 
 Hypothesis 3: Higher protein content correlates with higher ratings.
+
 Finding: Cereals with 4-6g of protein had ratings consistently above 60, supporting a strong positive correlation.
 
 Hypothesis 4: High calorie counts result in lower ratings.
+
 Finding: No strong correlation was found between calorie counts and ratings, as ratings were evenly distributed across all calorie levels.
 
 Hypothesis 5: Brand correlates with nutritional content.
+
 Finding: Clear differences in nutritional content were observed across manufacturers, supporting a correlation between brand positioning and product formulations.
 
 **Visualizations**
