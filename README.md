@@ -102,11 +102,6 @@ The analysis confirms that:
 
 ---
 
-## **Contributions**
-Feel free to open issues or submit pull requests to contribute to this project. Suggestions for additional analyses are always welcome!
-
----
-
 ## **Acknowledgments**
 - Dataset: [1993 Expo Dataset](https://lib.stat.cmu.edu/datasets/1993.expo/)
 - Tools and Libraries: Python, R, ggplot2, Pandas, Matplotlib, Seaborn
