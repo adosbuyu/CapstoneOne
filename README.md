@@ -29,7 +29,7 @@ Additional attributes: shelf (store shelf placement), weight, cups
 
 Target variable: rating
 
-The full dataset can be found here.
+The full dataset can be found here: https://lib.stat.cmu.edu/datasets/1993.expo/.
 
 
 
