@@ -55,7 +55,7 @@ R: ggplot2, dplyr
 
 Visualization Tools: Matplotlib, Seaborn, ggplot2
 
-Data Source: 1993 Expo Dataset
+Data Source: 1993 Expo Dataset: https://lib.stat.cmu.edu/datasets/1993.expo/
 
 
 
